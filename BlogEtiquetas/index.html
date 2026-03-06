@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduHTML | Master Blog</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header class="main-nav">
+        <div class="logo">HTML<span>BLOG</span> 📖</div>
+        <nav class="tabs-horizontal">
+            <button class="tab-btn active" onclick="cambiarSeccion('sec-que-es')">¿Qué es HTML?</button>
+            <button class="tab-btn" onclick="cambiarSeccion('sec-etiquetas-info')">Categoría de Etiquetas</button>
+            <a href="https://www.w3schools.com/html/default.asp" target="_blank" class="nav-link">Navegación Web ↗</a>
+        </nav>
+    </header>
+
+    <div class="app-layout">
+        
+        <aside class="sidebar" id="sidebar">
+    <p class="sidebar-label">BIBLIOTECA PRÁCTICA</p>
+    <nav class="nav-vertical">
+        <button onclick="scrollToId('estructurales')">Estructurales</button>
+        <button onclick="scrollToId('texto')">Texto y Contenido</button>
+        <button onclick="scrollToId('Lista')">Listas</button>
+        <button onclick="scrollToId('formularios')">Formularios</button>
+        <button onclick="scrollToId('tablas')">Tablas</button>
+        <button onclick="scrollToId('multimedia')">Multimedia</button>
+    </nav>
+</aside>
+
+        <main class="main-content">
+
+           <section id="sec-que-es" class="content-view active">
+    <article class="theory-container">
+        <header class="theory-header">
+            <h1>Fundamentos de HTML</h1>
+            <p class="subtitle">La base fundamental del desarrollo web moderno.</p>
+        </header>
+
+        <div class="theory-card main-info">
+            <div class="theory-text">
+                <h2>¿Qué es HTML?</h2>
+                <p><strong>HTML</strong> es la sigla de <em>HyperText Markup Language</em>, que en español significa <strong>Lenguaje de Marcado de Hipertexto</strong>. Es el lenguaje estándar utilizado para la creación y estructuración de páginas web.</p>
+                <p>HTML permite organizar y mostrar el contenido mediante etiquetas o tags, las cuales indican al navegador cómo debe mostrarse la información (títulos, párrafos, imágenes, formularios, etc.). Los navegadores interpretan este código y lo convierten en la página visual que ves en internet.</p>
+            </div>
+            <div class="theory-image">
+                <img src="https://images.unsplash.com/photo-1621839673705-6617adf9e890?auto=format&fit=crop&w=500&q=80" alt="Código HTML">
+            </div>
+        </div>
+
+        <h2 class="section-title">¿Qué significa HTML?</h2>
+        <div class="meaning-grid">
+            <div class="meaning-card">
+                <span class="m-letter">H</span>
+                <h3>HyperText</h3>
+                <p>Capacidad de conectar documentos mediante hipervínculos (links), permitiendo navegar entre diferentes páginas.</p>
+            </div>
+            <div class="meaning-card">
+                <span class="m-letter">M</span>
+                <h3>Markup</h3>
+                <p>Uso de etiquetas para marcar y estructurar el contenido dentro de un documento.</p>
+            </div>
+            <div class="meaning-card">
+                <span class="m-letter">L</span>
+                <h3>Language</h3>
+                <p>Conjunto de reglas y sintaxis utilizadas para escribir y organizar el contenido web.</p>
+            </div>
+        </div>
+
+        <div class="theory-card serving-section">
+            <div class="theory-text">
+                <h2>¿Para qué sirve HTML?</h2>
+                <p>Se utiliza para crear la estructura de las páginas web. Sus funciones principales son:</p>
+                <ul class="styled-list">
+                    <li>Definir la estructura básica y jerarquía.</li>
+                    <li>Crear títulos y párrafos de texto.</li>
+                    <li>Insertar imágenes y contenido multimedia (videos/audios).</li>
+                    <li>Crear enlaces y organizar datos en tablas o listas.</li>
+                </ul>
+                <div class="complement-box">
+                    <p><strong>HTML trabaja junto a:</strong></p>
+                    <p>🎨 <strong>CSS:</strong> Estilo y diseño.</p>
+                    <p>⚡ <strong>JavaScript:</strong> Interactividad y dinámica.</p>
+                </div>
+            </div>
+            <div class="theory-image">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=80" alt="Desarrollo Web">
+            </div>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="pros-card">
+                <h3>✅ Ventajas</h3>
+                <ul>
+                    <li><strong>Fácil de aprender:</strong> Sintaxis clara para principiantes.</li>
+                    <li><strong>Compatibilidad:</strong> Funciona en todos los navegadores modernos.</li>
+                    <li><strong>Gratuito y Abierto:</strong> Sin costo de licencias.</li>
+                    <li><strong>Base Universal:</strong> Todos los sitios web lo utilizan.</li>
+                    <li><strong>Integración:</strong> Se combina con CSS y JS.</li>
+                </ul>
+            </div>
+            <div class="cons-card">
+                <h3>❌ Desventajas</h3>
+                <ul>
+                    <li><strong>No es programación:</strong> No ejecuta lógica compleja por sí solo.</li>
+                    <li><strong>Páginas Estáticas:</strong> Sin interactividad sin JavaScript.</li>
+                    <li><strong>Visualmente Pobre:</strong> Necesita CSS para verse bien.</li>
+                    <li><strong>Limitación de Datos:</strong> No se conecta directo a bases de datos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h3>Conclusión</h3>
+            <p>HTML es el corazón de la web. Aunque tiene limitaciones, su facilidad de uso y capacidad de integración lo convierten en una herramienta esencial para cualquier desarrollador web profesional.</p>
+        </div>
+    </article>
+</section>
+
+           <section id="sec-etiquetas-info" class="content-view">
+    <article class="theory-container">
+        <header class="theory-header">
+            <h1>Etiquetas en HTML</h1>
+            <p class="subtitle">Los ladrillos que construyen la estructura semántica de la web.</p>
+        </header>
+
+        <div class="theory-card main-info">
+            <div class="theory-text">
+                <h2>¿Qué son las etiquetas?</h2>
+                <p>Las etiquetas HTML son elementos utilizados para <strong>definir y estructurar</strong> el contenido de una página web. Indican al navegador cómo debe interpretarse y mostrarse cada parte del contenido (textos, imágenes, tablas, etc.).</p>
+                <p>Están formadas por palabras clave encerradas entre signos de menor y mayor que <code>&lt; &gt;</code>. Generalmente se componen de una apertura y un cierre.</p>
+                
+                <div class="anatomy-box">
+                    <div class="tag-example">
+                        <span class="t-open">&lt;p&gt;</span>
+                        <span class="t-content">Este es un párrafo</span>
+                        <span class="t-close">&lt;/p&gt;</span>
+                    </div>
+                    <div class="anatomy-labels">
+                        <span>Apertura</span>
+                        <span>Contenido</span>
+                        <span>Cierre</span>
+                    </div>
+                </div>
+            </div>
+            <div class="theory-image">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=80" alt="Sintaxis HTML">
+            </div>
+        </div>
+
+        <h2 class="section-title">¿Para qué sirven?</h2>
+        <div class="meaning-grid">
+            <div class="meaning-card">
+                <span class="m-letter">1</span>
+                <h3>Organización</h3>
+                <p>Permiten que los navegadores interpreten el contenido correctamente (títulos, listas, videos).</p>
+            </div>
+            <div class="meaning-card">
+                <span class="m-letter">2</span>
+                <h3>Jerarquía</h3>
+                <p>Definen qué información es más importante mediante encabezados y secciones.</p>
+            </div>
+            <div class="meaning-card">
+                <span class="m-letter">3</span>
+                <h3>Interactividad</h3>
+                <p>Facilitan la creación de formularios y enlaces para conectar con el usuario.</p>
+            </div>
+        </div>
+
+        <div class="theory-card serving-section">
+            <div class="theory-text">
+                <h2>¿Cómo se usan?</h2>
+                <p>Se escriben directamente en el documento. La mayoría sigue la estructura básica: <code>&lt;etiqueta&gt;contenido&lt;/etiqueta&gt;</code>.</p>
+                
+                <div class="syntax-showcase" style="background: #f4f7fa; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                    <code>&lt;h1&gt;Título principal&lt;/h1&gt;</code><br>
+                    <code>&lt;p&gt;Este es un párrafo de texto.&lt;/p&gt;</code>
+                </div>
+
+                <p>Además, pueden incluir <strong>atributos</strong> (propiedades adicionales):</p>
+                <div class="syntax-mini" style="background: #eef2f7; padding: 10px; border-left: 4px solid var(--blue-cobalt);">
+                    <code>&lt;img src="imagen.jpg" alt="Descripción" width="200"&gt;</code>
+                </div>
+                <ul class="styled-list" style="margin-top: 10px; font-size: 0.9rem;">
+                    <li><strong>src:</strong> ruta del archivo.</li>
+                    <li><strong>alt:</strong> descripción para accesibilidad.</li>
+                    <li><strong>width:</strong> define el tamaño.</li>
+                </ul>
+            </div>
+            <div class="theory-image">
+                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=500&q=80" alt="Código en pantalla">
+            </div>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="pros-card">
+                <h3>✅ Ventajas</h3>
+                <ul>
+                    <li><strong>Fácil de aprender:</strong> Nombres simples y sintaxis lógica.</li>
+                    <li><strong>Organización:</strong> Estructura clara y ordenada.</li>
+                    <li><strong>Compatibilidad:</strong> Funcionan en todos los navegadores.</li>
+                    <li><strong>Base Universal:</strong> Estándar mundial de la web.</li>
+                    <li><strong>Integración:</strong> Se combinan perfecto con CSS y JS.</li>
+                </ul>
+            </div>
+            <div class="cons-card">
+                <h3>❌ Desventajas</h3>
+                <ul>
+                    <li><strong>Sin lógica:</strong> No realizan cálculos ni procesos complejos.</li>
+                    <li><strong>Dependencia:</strong> Requieren CSS para diseño avanzado.</li>
+                    <li><strong>Mantenimiento:</strong> El código puede ser extenso en sitios grandes.</li>
+                    <li><strong>Datos:</strong> No se conectan directo a bases de datos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="theory-card" style="margin-top: 40px; display: block;">
+            <h2>Categorías de etiquetas</h2>
+            <p>Se clasifican según su función:</p>
+            <div class="cat-pill-container" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+                <span class="cat-pill" style="background: var(--gray-bg); padding: 8px 15px; border-radius: 20px; border: 1px solid var(--blue-cobalt);">Etiquetas estructurales</span>
+                <span class="cat-pill" style="background: var(--gray-bg); padding: 8px 15px; border-radius: 20px; border: 1px solid var(--blue-cobalt);">Etiquetas de texto</span>
+                <span class="cat-pill" style="background: var(--gray-bg); padding: 8px 15px; border-radius: 20px; border: 1px solid var(--blue-cobalt);">Etiquetas de listas</span>
+                <span class="cat-pill" style="background: var(--gray-bg); padding: 8px 15px; border-radius: 20px; border: 1px solid var(--blue-cobalt);">Etiquetas de tablas</span>
+                <span class="cat-pill" style="background: var(--gray-bg); padding: 8px 15px; border-radius: 20px; border: 1px solid var(--blue-cobalt);">Etiquetas de formularios</span>
+                <span class="cat-pill" style="background: var(--gray-bg); padding: 8px 15px; border-radius: 20px; border: 1px solid var(--blue-cobalt);">Etiquetas multimedia</span>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h3>Resumen Educativo</h3>
+            <p>Las etiquetas son los ladrillos de la web. Sin ellas, el navegador no sabría diferenciar entre un simple texto y un botón interactivo. Dominarlas es el primer paso para ser un desarrollador profesional.</p>
+        </div>
+    </article>
+</section>
+
+<section id="sec-biblioteca" class="content-view">
+    <article class="theory-container">
+
+        <div id="estructurales" class="category-block">
+            <header class="theory-header">
+                <h1>1. Etiquetas Estructurales</h1>
+                <p>Estas etiquetas definen la arquitectura semántica y jerarquía del documento web.</p>
+            </header>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: header</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definición</h3>
+                        <p>La etiqueta header representa la cabecera de una página o de una sección específica. Suele contener logotipos, títulos de navegación o formularios de búsqueda.</p>
+                        
+                        <h3>Sintaxis basica / demostracion visual</h3>
+                        <div class="image-slot">
+                            <img src="assets/img/sintaxisHeader.png" alt="">
+                        </div>
+                    </div>
+                        <h3>Uso Adecuado</h3>
+                        <p>Se utiliza para introducir el contenido que le sigue o para facilitar la navegación global del sitio.</p>
+
+                        <div class="best-practices">
+                            <strong>Buenas prácticas:</strong>
+                            <ul>
+                                <li>No debe confundirse con la etiqueta head.</li>
+                                <li>Puede haber varios header en una página (uno en el body y otros dentro de section o article).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: section</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definición</h3>
+                        <p>Define una sección genérica y autónoma de contenido dentro del documento, la cual no tiene un contenedor más específico que la represente.</p>
+                        
+                        <h3>Sintaxis básica / demostraccion visual</h3>
+                        <div class="image-slot">
+                            <img src="assets/img/section.png" alt="Captura de sección temática">
+                        </div>
+
+                        <h3>Uso Adecuado</h3>
+                        <p>Se emplea para agrupar contenido que comparte una misma temática, ayudando a los lectores de pantalla a entender la división del sitio.</p>
+
+                        <div class="best-practices">
+                            <strong>Buenas prácticas:</strong>
+                            <ul>
+                                <li>Cada sección debería incluir, por norma general, un encabezado (h2-h6).</li>
+                                <li>No usar como un simple contenedor de diseño (para eso existe el div).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: footer</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definición</h3>
+                        <p>Representa el pie de página de un documento o de una sección. Suele contener información sobre el autor, datos de copyright o enlaces a redes sociales.</p>
+                        
+                        <h3>Sintaxis básica / demostracion visual</h3>
+                        <div class="image-slot">
+                            <img src="assets/img/footer.png" alt="">
+                        </div>
+                        <h3>Uso Adecuado</h3>
+                        <p>Se coloca al final del contenido del cual es "pie", proporcionando información de cierre o metadatos del autor.</p>
+                        <div class="best-practices">
+                            <strong>Buenas prácticas:</strong>
+                            <ul>
+                                <li>Mantenerlo simple y con información legal o de contacto relevante.</li>
+                                <li>Al igual que el header, puede repetirse en diferentes secciones.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div id="texto" class="category-block">
+            <header class="theory-header">
+                <h1>2. Etiquetas Texto </h1>
+                <p>Elementos para estructurar informacion escrita y dar jerarquia al contenido.</p>
+            </header>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: h1</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Representa el titulo principal del documento. Es el nivel mas alto de jerarquia.</p>
+                        
+                        <h3>Sintaxis / Visual</h3>
+                        <div class="image-slot">
+                            <img src="assets/img/h1.png" alt="Demo titulo h1">
+                        </div>
+                        <p class="code-preview">(h1) Este es el titulo principal (/h1)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Se usa para el tema central de la pagina. Ayuda a los motores de busqueda a indexar el sitio.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>Usar solo un (h1) por pagina web.</li>
+                            <li>No usar para hacer texto grande, para eso se usa CSS.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: p</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Define un parrafo de texto. El navegador añade automaticamente espacio antes y despues.</p>
+                        
+                        <h3>Sintaxis / Visual</h3>
+                        <div class="image-slot">
+                            <img src="assets/img/p.png" alt="Demo parrafo">
+                        </div>
+                        <p class="code-preview">(p) Este es un bloque de texto informativo (/p)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Ideal para bloques de lectura. Agrupa oraciones relacionadas con un mismo tema.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>Mantener parrafos cortos para facilitar la lectura.</li>
+                            <li>No meter etiquetas de bloque como (div) dentro de un (p).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: strong</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Indica que el texto tiene una importancia fuerte, seriedad o urgencia.</p>
+                        
+                        <h3>Sintaxis / Visual</h3>
+                        <div class="image-slot">
+                            <img src="assets/img/strong.png" alt="Demo texto importante">
+                        </div>
+                        <p class="code-preview">Texto normal (strong) texto importante (/strong)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Muestra el texto en negrita por defecto, pero su valor principal es avisar a lectores de pantalla que es contenido vital.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>No abusar de las negritas en todo el texto.</li>
+                            <li>Usar solo en palabras clave o advertencias.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        <div id="listas" class="category-block">
+            <header class="theory-header">
+                <h1>3. Etiquetas de Listas</h1>
+                <p>Elementos para organizar informacion en puntos, secuencias o glosarios.</p>
+            </header>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: ul</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Crea listas desordenadas, donde el orden no es relevante. Los items aparecen con viñetas.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/ul.png" alt="Demo lista desordenada">
+                        </div>
+                        <p class="code-preview">(ul) ... (/ul)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Ideal para listas de compras, caracteristicas o menus de navegacion simple.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>Solo debe contener etiquetas (li) como hijos directos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: ol</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Crea listas ordenadas. Los elementos siguen una secuencia numerica o alfabetica automatica.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/ol.png" alt="Demo lista ordenada">
+                        </div>
+                        <p class="code-preview">(ol) ... (/ol)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Se usa para instrucciones, pasos de una receta o cualquier contenido con orden jerarquico.</p>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: li</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Define un elemento individual dentro de una lista (ul) o (ol).</p>
+                        <div class="image-slot">
+                            <img src="assets/img/li.png" alt="Demo elemento de lista">
+                        </div>
+                        <p class="code-preview">(li) Item de lista (/li)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Representa cada punto de la lista. No debe usarse solo, siempre dentro de un contenedor de lista.</p>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: dl</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Representa una lista de descripcion o glosario, conectando terminos con sus explicaciones.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/dl.png" alt="Demo lista de definiciones">
+                        </div>
+                        <p class="code-preview">(dl) (dt)Termino(/dt) (dd)Descripcion(/dd) (/dl)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Se usa para diccionarios, preguntas frecuentes (FAQ) o metadatos de un articulo.</p>
+                    <div class="best-practices">
+                        <strong>Estructura interna:</strong>
+                        <ul>
+                            <li>(dt): El termino a definir.</li>
+                            <li>(dd): La definicion o descripcion del termino.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="formularios" class="category-block">
+            <header class="theory-header">
+                <h1>4. Etiquetas de Formularios</h1>
+                <p>Elementos para interactuar con el usuario y recopilar datos de entrada.</p>
+            </header>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: form</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Contenedor principal que agrupa campos de entrada para enviar informacion al servidor.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/form.png" alt="Demo estructura formulario">
+                        </div>
+                        <p class="code-preview">(form) ... (/form)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Se usa para crear secciones de contacto, registros o inicios de sesion.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>Incluir etiquetas descriptivas para cada campo.</li>
+                            <li>Validar que los datos sean correctos antes de enviar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: input</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Campo versatil donde el usuario introduce datos. No necesita etiqueta de cierre.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/input.png" alt="Demo campo de entrada">
+                        </div>
+                        <p class="code-preview">(input type="text" /)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Segun su "type", puede ser texto, correo, contraseña, numero o incluso un selector de fecha.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>Usar el tipo de entrada adecuado (email para correos, etc).</li>
+                            <li>Usar el atributo placeholder para dar pistas al usuario.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: label</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Define un nombre o etiqueta de texto vinculada a un campo de entrada (input).</p>
+                        <div class="image-slot">
+                            <img src="assets/img/label.png" alt="Demo etiqueta label">
+                        </div>
+                        <p class="code-preview">(label) Nombre: (/label)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Mejora la accesibilidad. Al hacer clic en el texto, el cursor se posiciona en el campo asociado.</p>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: button</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Crea un boton clickeable para ejecutar acciones o enviar el formulario.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/button.png" alt="Demo boton">
+                        </div>
+                        <p class="code-preview">(button) Enviar Datos (/button)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Se usa para procesar el formulario o realizar acciones interactivas con JavaScript.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>Usar textos claros que indiquen la accion (ej: "Registrarse").</li>
+                            <li>Indicar el tipo de boton (type="submit" o "button").</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tablas" class="category-block">
+            <header class="theory-header">
+                <h1>5. Etiquetas de Tablas</h1>
+                <p>Elementos para organizar y presentar datos estructurados en filas y columnas.</p>
+            </header>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: table</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Contenedor principal que define una tabla para organizar informacion compleja.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/table.png" alt="Demo estructura de tabla">
+                        </div>
+                        <p class="code-preview">(table) ... (/table)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Se utiliza para mostrar datos tabulares, como listas de precios, horarios o resultados.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>Usar tablas solo para datos estructurados, nunca para maquetar el diseño del sitio.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: tr</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Define una fila (table row) dentro de la tabla que agrupara las celdas de datos o encabezados.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/tr.png" alt="Demo fila de tabla">
+                        </div>
+                        <p class="code-preview">(tr) ... (/tr)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Organiza la informacion de forma horizontal. Cada fila representa un registro de la tabla.</p>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: th</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Define una celda de encabezado (table header). El texto suele aparecer centrado y en negrita.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/th.png" alt="Demo encabezado de tabla">
+                        </div>
+                        <p class="code-preview">(th) Titulo de Columna (/th)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Se usa en la primera fila o columna para identificar que tipo de datos siguen a continuacion.</p>
+                </div>
+            </div>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: td</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Define una celda de datos estandar (table data) dentro de una fila de la tabla.</p>
+                        <div class="image-slot">
+                            <img src="assets/img/td.png" alt="Demo celda de datos">
+                        </div>
+                        <p class="code-preview">(td) Dato especifico (/td)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Contiene la informacion real (texto, numeros, imagenes) que se desea mostrar en la cuadricula.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>Mantener el contenido claro y alineado correctamente con su encabezado.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="multimedia" class="category-block">
+            <header class="theory-header">
+                <h1>6. Etiquetas Multimedia</h1>
+                <p>Elementos para integrar contenido visual y auditivo de forma interactiva.</p>
+            </header>
+
+            <div class="tag-card">
+                <div class="tag-header">Etiqueta: img</div>
+                <div class="tag-body">
+                    <div class="tag-info">
+                        <h3>Definicion</h3>
+                        <p>Se utiliza para insertar imagenes. Es una etiqueta de cierre automatico (no necesita etiqueta de cierre).</p>
+                        <div class="image-slot">
+                            <img src="assets/img/img_preview.png" alt="Demo imagen">
+                        </div>
+                        <p class="code-preview">(img src="ruta/imagen.jpg" alt="descripcion" /)</p>
+                    </div>
+                    <h3>Uso Adecuado</h3>
+                    <p>Agrega contenido visual. Requiere el atributo src para la ruta y alt para accesibilidad.</p>
+                    <div class="best-practices">
+                        <strong>Buenas practicas:</strong>
+                        <ul>
+                            <li>Siempre usar el atributo alt para lectores de pantalla.</li>
+                            <li>Optimizar el tamaño de la imagen para mejorar la carga.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card">
+        <div class="tag-header">Etiqueta: audio</div>
+        <div class="tag-body">
+            <div class="tag-info">
+                <h3>Definicion</h3>
+                <p>Permite insertar archivos de sonido directamente en el navegador sin plugins externos.</p>
+                <div class="image-slot">
+                    <img src="assets/img/audio_preview.png" alt="Demo reproductor audio">
+                </div>
+
+                <audio controls>
+    <source src="assets/img/horse.ogv" type="img/mpeg">
+</audio>
+            </div>
+            <h3>Uso Adecuado</h3>
+            <p>Ideal para podcasts, musica o sonidos educativos. El atributo "controls" es vital para que el usuario pueda darle play.</p>
+            <div class="best-practices">
+                <strong>Buenas practicas:</strong>
+                <ul>
+                    <li>Ofrecer controles de reproduccion claros.</li>
+                    <li>Evitar la reproduccion automatica (autoplay) para no molestar al usuario.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="tag-card">
+        <div class="tag-header">Etiqueta: video</div>
+        <div class="tag-body">
+            <div class="tag-info">
+                <h3>Definicion</h3>
+                <p>Permite insertar videos nativamente. Es compatible con formatos modernos como MP4, WebM y Ogg.</p>
+                <div class="image-slot">
+                    <img src="assets/img/sena.png" alt="Demo reproductor video">
+                </div>
+                <video width="600" controls>
+    <source src="assets/img/sena.mp4" type="img/mp4">
+</video>
+            </div>
+            <h3>Uso Adecuado</h3>
+            <p>Se usa para mostrar tutoriales o contenido audiovisual. Permite definir ancho (width) y alto (height) directamente.</p>
+            <div class="best-practices">
+                <strong>Buenas practicas:</strong>
+                <ul>
+                    <li>Incluir siempre el atributo controls para que el usuario gestione el volumen y tiempo.</li>
+                    <li>Usar el atributo poster para mostrar una imagen previa antes de iniciar el video.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="tag-card">
+        <div class="tag-header">Etiqueta: source</div>
+        <div class="tag-body">
+            <div class="tag-info">
+                <h3>Definicion</h3>
+                <p>Se utiliza dentro de (audio) o (video) para especificar multiples archivos de origen o diferentes formatos.</p>
+                <div class="image-slot">
+                    <img src="assets/img/source.png" alt="Demo etiqueta source">
+                </div>
+                <p class="code-preview">(source src="video.mp4" type="video/mp4" /)</p>
+            </div>
+            <h3>Uso Adecuado</h3>
+            <p>Sirve para que el navegador elija el formato que mejor soporte segun su compatibilidad interna.</p>
+            <div class="best-practices">
+                <strong>Buenas practicas:</strong>
+                <ul>
+                    <li>Colocar los formatos mas ligeros y compatibles (como MP4) primero en la lista.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+           
+
+
+        </div>
+    </article>
+</section>
+
+
+
+
+
+        </main>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
