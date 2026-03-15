@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios JavaScript</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="menu">
+
+<h3>Menu</h3>
+
+<a href="#ej1">1. Mostrar texto</a>
+<a href="#ej2">2. Calculadora suma</a>
+<a href="#ej3">3. Cambiar color</a>
+<a href="#ej4">4. Contador</a>
+<a href="#ej5">5. Lista dinamica</a>
+<a href="#ej6">6. Validacion formulario</a>
+<a href="#ej7">7. Calculadora basica</a>
+<a href="#ej8">8. Eliminar tareas</a>
+<a href="#ej9">9. Temporizador</a>
+
+</div>
+
+<h1>Ejercicios JavaScript - Nivel 1 Basico</h1>
+
+<div class="tarjeta" id="ej1">
+
+<h2>1. Mostrar texto</h2>
+<button id="btnMensaje">Mostrar mensaje</button>
+<p id="resultado"></p>
+
+</div>
+
+<div class="tarjeta" id="ej2">
+
+<h2>2. Calculadora de suma</h2>
+<input type="number" id="num1" placeholder="Numero 1">
+<br><br>
+<input type="number" id="num2" placeholder="Numero 2">
+<br><br>
+<button id="btnSumar">Sumar</button>
+<p id="resultadoSuma"></p>
+
+</div>
+
+<div class="tarjeta" id="ej3">
+
+<h2>3. Cambiar color de fondo</h2>
+<button id="rojo">Rojo</button>
+<button id="azul">Azul</button>
+<button id="verde">Verde</button>
+
+</div>
+
+<h1>Ejercicios JavaScript - Nivel 2 Intermedio</h1>
+
+<div class="tarjeta" id="ej4">
+
+<h2>4. Contador de clics</h2>
+<p id="contador">Clics: 0</p>
+<button id="btnContador">hacer clic</button>
+<button id="btnLimpiar">Limpiar contador</button>
+
+</div>
+
+<div class="tarjeta" id="ej5">
+
+<h2>5. Lista dinamica</h2>
+<input type="text" id="tarea" placeholder="Escribir tarea">
+<button id="agregar">Agregar</button>
+<ul id="lista"></ul>
+
+</div>
+
+<div class="tarjeta" id="ej6">
+
+<h2>6. Validacion de formulario</h2>
+<form id="Formulario">
+<input type="text" id="nombre" placeholder="Nombre">
+<input type="email" id="correo" placeholder="Correo">
+<input type="number" id="edad" placeholder="Edad">
+<button type="submit">Confirmar</button>
+</form>
+<p id="mensaje"></p>
+
+</div>
+
+<h1>Ejercicios JavaScript - Nivel 3 Intermedio avanzado</h1>
+
+<div class="tarjeta" id="ej7">
+
+<h2>7. Calculadora basica</h2>
+
+<input type="number" id="num1calc" placeholder="Escribe num1">
+<input type="number" id="num2calc" placeholder="Escribe num2">
+
+<br><br>
+
+<button onclick="calculadora.sumar()">+</button>
+<button onclick="calculadora.multiplicar()">*</button>
+<button onclick="calculadora.dividir()">/</button>
+
+<p id="calcular"></p>
+
+</div>
+
+<div class="tarjeta" id="ej8">
+
+<h2>8. Eliminar tareas</h2>
+
+<input type="text" id="tarea2" placeholder="Escribir tarea">
+<button id="agregar2">Agregar</button>
+
+<ul id="lista2"></ul>
+
+</div>
+
+<div class="tarjeta" id="ej9">
+
+<h2>9. Temporizador</h2>
+
+<p id="tiempo">0</p>
+
+<button onclick="temporizador.iniciar()">Iniciar</button>
+<button onclick="temporizador.detener()">Detener</button>
+<button onclick="temporizador.reiniciar()">Reiniciar</button>
+
+</div>
+
+<script src="js/ejercicio1_mensaje.js"></script>
+<script src="js/ejercicio2_suma.js"></script>
+<script src="js/ejercicio3_color.js"></script>
+<script src="js/ejercicio4_contador.js"></script>
+<script src="js/ejercicio5_lista.js"></script>
+<script src="js/ejercicio6_formulario.js"></script>
+<script src="js/ejercicio7_calculadora.js"></script>
+<script src="js/ejercicio8_eliminar_tarea.js"></script>
+<script src="js/ejercicio9_temporizador.js"></script>
+
+</body>
+</html>

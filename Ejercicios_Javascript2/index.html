@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabajo JavaScript</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="menu">
+<h2>Menu</h2>
+
+<a href="#banco">1. Banco</a>
+<a href="#inventario">2. Inventario</a>
+<a href="#estudiantes">3. Estudiantes</a>
+<a href="#carrito">4. Carrito</a>
+<a href="#vehiculos">5. Vehiculos</a>
+<a href="#biblioteca">6. Biblioteca</a>
+
+</div>
+
+<div class="contenido">
+
+<h1>Aplicativo JavaScript</h1>
+<br>
+<br>
+
+<div class="tarjeta" id="banco">
+<h3>Sistema Bancario</h3>
+
+<input id="cliente" placeholder="Cliente">
+<input type="number" id="saldo" placeholder="Saldo inicial">
+<button onclick="crearCuenta()">Crear cuenta</button>
+
+<input type="number" id="montoBanco" placeholder="Monto">
+<button onclick="depositar()">Depositar</button>
+<button onclick="retirar()">Retirar</button>
+
+<p id="resBanco"></p>
+</div>
+
+<div class="tarjeta" id="inventario">
+<h3>Inventario</h3>
+
+<input id="prod" placeholder="Producto">
+<input id="precio" type="number" placeholder="Precio">
+<input id="cantidad" type="number" placeholder="Cantidad">
+
+<button onclick="agregarProducto()">Agregar</button>
+<button onclick="totalInventario()">Total</button>
+
+<ul id="listaInv"></ul>
+<p id="resInv"></p>
+</div>
+
+<div class="tarjeta" id="estudiantes">
+<h3>Registro Estudiantes</h3>
+
+<input id="nombreEst" placeholder="Nombre">
+<input id="nota" type="number" placeholder="Nota">
+
+<button onclick="registrarEstudiante()">Registrar</button>
+
+<ul id="listaEst"></ul>
+</div>
+
+<div class="tarjeta" id="carrito">
+<h3>Carrito</h3>
+
+<input id="productoCarrito" placeholder="Producto">
+<input id="precioCarrito" type="number" placeholder="Precio">
+
+<button onclick="agregarCarrito()">Agregar</button>
+
+<ul id="listaCarrito"></ul>
+<p id="totalCarrito"></p>
+</div>
+
+<div class="tarjeta" id="vehiculos">
+<h3>Control Vehículos</h3>
+
+<input id="vehiculoNombre" placeholder="Vehículo">
+
+<button onclick="crearVehiculo()">Crear</button>
+<button onclick="acelerar()">Acelerar</button>
+<button onclick="frenar()">Frenar</button>
+
+<p id="estadoVehiculo"></p>
+</div>
+
+<div class="tarjeta" id="biblioteca">
+<h3>Biblioteca</h3>
+
+<input id="tituloLibro" placeholder="Título">
+<input id="autorLibro" placeholder="Autor">
+
+<button onclick="agregarLibro()">Agregar</button>
+
+<ul id="listaLibros"></ul>
+</div>
+
+</div>
+
+<script src="js/banco.js"></script>
+<script src="js/inventario.js"></script>
+<script src="js/estudiantes.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/vehiculos.js"></script>
+<script src="js/biblioteca.js"></script>
+
+</body>
+</html>
