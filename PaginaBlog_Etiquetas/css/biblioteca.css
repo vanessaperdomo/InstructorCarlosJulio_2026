@@ -1,300 +1,306 @@
-/* Colores y variables globales del sitio */
+/* ============================================================
+   biblioteca.css — estilos del menu vertical (biblioteca)
+   Colores: Azul, Negro, Blanco
+============================================================ */
+
+/* Variables de color reutilizables */
 :root {
-    --blue: #2563eb;
+    --blue:      #2563eb;
     --blue-dark: #1e40af;
-    --black: #1a1a1a;
-    --white: #ffffff;
-    --gray: #f4f7fa;
-    --border: #e2e8f0;
+    --blue-light:#eff6ff;
+    --black:     #1a1a1a;
+    --gray-text: #4b5563;
+    --white:     #ffffff;
+    --gray:      #f4f7fa;
+    --border:    #e2e8f0;
 }
 
-/* Elimina margenes y padding por defecto en todos los elementos */
+/* Elimina margenes y padding por defecto */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales del cuerpo de la pagina */
+/* Estilo general de la pagina */
 body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     background: var(--white);
     color: var(--black);
+    padding: 30px 40px;
+    line-height: 1.6;
 }
 
-/* Barra de navegacion superior fija */
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    border-bottom: 2px solid var(--blue);
-    position: sticky;
-    top: 0;
-    background: var(--white);
-}
-
-/* Logo del blog */
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-}
-
-/* Color azul para la parte resaltada del logo */
-.logo span {
-    color: var(--blue);
-}
-
-/* Contenedor de los botones del menu horizontal */
-.tabs-horizontal {
-    display: flex;
-    gap: 20px;
-}
-
-/* Estilos compartidos de botones y enlaces del nav */
-.tab-btn,
-.nav-link {
-    background: none;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--black);
-    text-decoration: none;
-    padding: 6px 0;
-}
-
-/* Layout principal: sidebar + contenido lado a lado */
-.app-layout {
-    display: flex;
-    min-height: 100vh;
-}
-
-/* Barra lateral izquierda con los botones de categorias */
-.sidebar {
-    width: 260px;
-    background: var(--gray);
-    padding: 25px;
-    border-right: 1px solid var(--border);
-}
-
-/* Etiqueta de titulo del sidebar */
-.sidebar-label {
-    font-size: .7rem;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    color: #666;
-}
-
-/* Botones de navegacion dentro del sidebar */
-.nav-vertical button {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: left;
-    font-weight: 600;
-}
-
-/* Efecto al pasar el mouse sobre los botones del sidebar */
-.nav-vertical button:hover {
-    background: var(--blue);
-    color: white;
-}
-
-/* Area principal donde se muestra el contenido */
-.main-content {
-    flex: 1;
-    padding: 40px 5%;
-}
-
-/* Oculta las secciones que no estan activas */
+/* Muestra el contenido cargado dentro del iframe */
 .content-view {
-    display: none;
+    display: block !important;
 }
 
-/* Muestra unicamente la seccion activa */
-.content-view.active {
-    display: block;
-}
-
-/* Contenedor centrado para el texto de teoria */
+/* Contenedor del articulo de teoria */
 .theory-container {
-    max-width: 1000px;
-    margin: auto;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* Encabezado de cada seccion de teoria */
-.theory-header {
-    text-align: center;
-    margin-bottom: 40px;
+/* Contenedor de cada categoria del menu */
+.category-block {
+    max-width: 860px;
+    margin: 0 auto;
 }
 
 /* Titulo principal de cada seccion */
+.theory-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--blue);
+}
+
+/* Texto del titulo en azul */
 .theory-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    font-weight: 800;
     color: var(--blue);
+    letter-spacing: -.01em;
 }
 
-/* Tarjeta con texto e imagen lado a lado */
-.theory-card {
-    display: flex;
-    gap: 30px;
+/* Subtexto debajo del titulo */
+.theory-header p {
+    color: var(--gray-text);
+    margin-top: 8px;
+    font-size: .92rem;
+}
+
+/* Tarjeta de cada etiqueta HTML */
+.tag-card {
     background: var(--white);
-    padding: 30px;
-    border-radius: 15px;
     border: 1px solid var(--border);
-    margin-bottom: 40px;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, .06);
 }
 
-/* Texto dentro de la tarjeta, justificado */
-.theory-text {
-    text-align: justify;
-    flex: 1;
+/* Cabecera azul con el nombre de la etiqueta */
+.tag-header {
+    background: var(--blue);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 13px 22px;
+    letter-spacing: .02em;
 }
 
-/* Contenedor de la imagen dentro de la tarjeta */
-.theory-image {
-    flex: 1;
-}
-
-/* Imagen de la tarjeta con tamano fijo */
-.theory-image img {
-    width: 100%;
-    height: 250px;
-    border-radius: 10px;
-}
-
-/* Grid para las tarjetas H, M, L o 1, 2, 3 */
-.meaning-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-/* Tarjeta individual del grid de significado */
-.meaning-card {
-    background: var(--gray);
-    padding: 25px;
-    border-radius: 12px;
-    text-align: justify;
-}
-
-/* Subtitulos centrados globalmente */
-h3 {
-    text-align: center;
-}
-
-/* Letra grande (H, M, L) de cada tarjeta */
-.m-letter {
-    display: block;
-    font-size: 40px;
-    font-weight: bold;
-    color: #2f6fed;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* Grid de dos columnas para ventajas y desventajas */
-.comparison-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-top: 30px;
-}
-
-/* Tarjeta de ventajas */
-.pros-card {
-    background: rgb(117, 200, 248);
-    color: rgb(247, 248, 249);
-    padding: 25px;
-    border-radius: 15px;
-}
-
-/* Tarjeta de desventajas */
-.cons-card {
-    background: rgb(117, 200, 248);
-    color: white;
-    padding: 25px;
-    border-radius: 15px;
-}
-
-/* Listas dentro de las tarjetas de comparacion */
-.pros-card ul,
-.cons-card ul {
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
-/* Caja oscura para mostrar la anatomia de una etiqueta */
-.anatomy-box {
-    background: #1e293b;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-    text-align: center;
-}
-
-/* Fuente monoespaciada para el ejemplo de codigo */
-.tag-example {
-    font-family: monospace;
-    font-size: 1.2rem;
-}
-
-/* Color amarillo para las etiquetas de apertura y cierre */
-.t-open,
-.t-close {
-    color: #facc15;
-}
-
-/* Etiquetas de texto debajo del ejemplo de anatomia */
-.anatomy-labels {
+/* Cuerpo interior de la tarjeta */
+.tag-body {
+    padding: 22px 24px 26px;
     display: flex;
-    justify-content: space-between;
-    font-size: .7rem;
-    color: #aaa;
-    margin-top: 10px;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/* Caja de conclusion con borde azul a la izquierda */
-.conclusion-box {
+/* Contenedor de la informacion de cada etiqueta */
+.tag-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Subtitulos internos como Definicion, Uso, etc. */
+.tag-info h3,
+.tag-body > h3 {
+    text-align: left;
+    font-size: .76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--blue);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 5px;
+    margin-top: 4px;
+}
+
+/* Texto descriptivo dentro de la tarjeta */
+.tag-info p,
+.tag-body > p {
+    font-size: .91rem;
+    line-height: 1.75;
+    color: var(--gray-text);
+    text-align: justify;
+}
+
+/* Listas de atributos o caracteristicas */
+.tag-info ul,
+.tag-body > ul {
+    padding-left: 20px;
+    font-size: .9rem;
+    line-height: 1.8;
+    color: var(--gray-text);
+}
+
+/* Zona donde va la imagen de ejemplo */
+.image-slot {
     background: var(--gray);
-    padding: 25px;
-    border-left: 5px solid var(--blue);
-    border-radius: 10px;
-    margin-top: 40px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
 }
 
-/* Adaptacion para pantallas pequenas (celulares y tablets) */
-@media (max-width: 900px) {
+/* Imagen dentro del slot */
+.image-slot img {
+    max-width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
 
-    /* Sidebar pasa a estar debajo del contenido */
-    .app-layout {
-        flex-direction: column;
+/* Bloque de codigo — sin fondo, texto negro simple */
+.code-preview {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: .85rem;
+    line-height: 1.8;
+    display: block;
+    color: var(--black);
+    background: none;
+    border-left: 3px solid var(--border);
+    padding: 8px 0 8px 14px;
+    margin: 2px 0;
+}
+
+/* Caja de buenas practicas con fondo azul claro */
+.best-practices {
+    background: var(--blue-light);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    font-size: .88rem;
+    line-height: 1.75;
+}
+
+/* Titulo dentro de buenas practicas */
+.best-practices strong {
+    font-weight: 700;
+    color: var(--blue-dark);
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Lista de buenas practicas */
+.best-practices ul {
+    padding-left: 18px;
+    margin-top: 4px;
+}
+
+/* Cada item de la lista */
+.best-practices li {
+    margin-bottom: 4px;
+    color: var(--black);
+}
+
+/* Reproductor de audio — ancho completo */
+audio {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    border-radius: 6px;
+}
+
+/* Video — ocupa todo el ancho, proporcion 16:9 */
+video.video-demo,
+.video-demo {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--black);
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+/* Contenedor del formulario de demo */
+.form-demo-wrapper {
+    background: var(--gray);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 6px;
+}
+
+/* Titulo del formulario de demo */
+.form-demo-title {
+    font-size: .78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--blue);
+    margin-bottom: 14px;
+}
+
+/* Grupo de campo: label + input */
+.form-group {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Etiqueta del campo */
+.form-group label {
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+/* Campos de entrada del formulario */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: .88rem;
+    color: var(--black);
+    background: var(--white);
+    outline: none;
+    transition: border-color .15s;
+}
+
+/* Resalta el campo activo en azul */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--blue);
+}
+
+/* Ajuste para pantallas pequenas */
+@media (max-width: 700px) {
+
+    /* Menos padding en movil */
+    body {
+        padding: 16px;
     }
 
-    /* Sidebar ocupa todo el ancho */
-    .sidebar {
-        width: 100%;
+    /* Titulo mas pequeno en movil */
+    .theory-header h1 {
+        font-size: 1.5rem;
     }
 
-    /* Tarjeta pasa a ser vertical */
-    .theory-card {
-        flex-direction: column;
+    /* Cuerpo de tarjeta mas compacto */
+    .tag-body {
+        padding: 14px;
     }
 
-    /* Comparacion pasa a una sola columna */
-    .comparison-grid {
-        grid-template-columns: 1fr;
+    /* Bordes del video mas sutiles en movil */
+    video.video-demo,
+    .video-demo {
+        border-radius: 4px;
     }
-
-    /* Se oculta el menu horizontal en movil */
-    .tabs-horizontal {
-        display: none;
-    }
-
 }
