@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/biblioteca.css">
+
+        <title>Multimedia HTML</title>
+
+    </head>
+
+    <body>
+
+        <section id="sec-biblioteca" class="content-view">
+
+            <article class="theory-container">
+
+                <div id="multimedia" class="category-block">
+
+                    <header class="theory-header">
+                        <h1>6. Etiquetas Multimedia</h1>
+                        <p>Elementos que permiten integrar contenido visual y auditivo dentro de una pagina web, haciendo la experiencia del usuario mas dinamica e interactiva.</p>
+                    </header>
+
+                    <div class="tag-card">
+
+                        <div class="tag-header">Etiqueta: img</div>
+
+                        <div class="tag-body">
+
+                            <div class="tag-info">
+
+                                <h3>Definicion</h3>
+
+                                <p>La etiqueta <strong>img</strong> se utiliza para mostrar imagenes dentro de una pagina web. Es una etiqueta vacia, lo que significa que no necesita etiqueta de cierre.</p>
+
+                                <p>Las imagenes permiten complementar la informacion del sitio, mejorar la comprension del contenido y hacer la pagina mas atractiva visualmente.</p>
+
+                                <div class="image-slot">
+                                    <img src="../multimedia/img.png" alt="Demo imagen">
+                                </div>
+
+                                <p class="code-preview">
+                                    &lt;img src="imagen.jpg" alt="descripcion"&gt;
+                                </p>
+
+                                <h3>Atributos importantes</h3>
+
+                                <ul>
+                                    <li><strong>src</strong> → ruta de la imagen.</li>
+                                    <li><strong>alt</strong> → descripcion de la imagen para accesibilidad.</li>
+                                    <li><strong>width / height</strong> → tamano de la imagen.</li>
+                                    <li><strong>loading</strong> → permite carga diferida (lazy loading).</li>
+                                </ul>
+
+                            </div>
+
+                            <h3>Uso Adecuado</h3>
+
+                            <p>Las imagenes se utilizan para ilustrar informacion, mostrar productos, graficos, diagramas o cualquier recurso visual que ayude al usuario a comprender mejor el contenido.</p>
+
+                            <div class="best-practices">
+
+                                <strong>Buenas practicas:</strong>
+
+                                <ul>
+                                    <li>Siempre usar el atributo <strong>alt</strong> para accesibilidad.</li>
+                                    <li>Optimizar el peso de las imagenes para mejorar la velocidad del sitio.</li>
+                                    <li>Usar formatos adecuados como JPG, PNG o WebP.</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="tag-card">
+
+                        <div class="tag-header">Etiqueta: audio</div>
+
+                        <div class="tag-body">
+
+                            <div class="tag-info">
+
+                                <h3>Definicion</h3>
+
+                                <p>La etiqueta <strong>audio</strong> permite reproducir archivos de sonido directamente en el navegador sin necesidad de programas externos.</p>
+
+                                <p>Se utiliza para integrar contenido como musica, narraciones, podcasts o efectos de sonido dentro de una pagina web.</p>
+
+                                <div class="image-slot">
+                                    <img src="../multimedia/audioimg.png" alt="Demo audio">
+                                </div>
+
+                                <p class="code-preview">
+                                    &lt;audio controls&gt;<br>
+                                    &lt;source src="audio.mp3" type="audio/mpeg"&gt;<br>
+                                    &lt;/audio&gt;
+                                </p>
+
+                                <audio controls>
+                                    <source src="../multimedia/audio.mp3" type="audio/mpeg">
+                                    <source src="../multimedia/audio.m4a" type="audio/mp4">
+                                </audio>
+
+                                <h3>Atributos importantes</h3>
+
+                                <ul>
+                                    <li><strong>controls</strong> → muestra los controles de reproduccion.</li>
+                                    <li><strong>autoplay</strong> → reproduce el audio automaticamente.</li>
+                                    <li><strong>loop</strong> → repite el audio continuamente.</li>
+                                    <li><strong>muted</strong> → inicia el audio sin sonido.</li>
+                                </ul>
+
+                            </div>
+
+                            <h3>Uso Adecuado</h3>
+
+                            <p>Es ideal para incluir contenido auditivo educativo, narraciones explicativas o material multimedia que complemente el texto.</p>
+
+                            <div class="best-practices">
+
+                                <strong>Buenas practicas:</strong>
+
+                                <ul>
+                                    <li>Ofrecer siempre controles al usuario.</li>
+                                    <li>Evitar el uso de <strong>autoplay</strong> para no interrumpir la experiencia del usuario.</li>
+                                    <li>Ofrecer varios formatos de audio para mayor compatibilidad.</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="tag-card">
+
+                        <div class="tag-header">Etiqueta: video</div>
+
+                        <div class="tag-body">
+
+                            <div class="tag-info">
+
+                                <h3>Definicion</h3>
+
+                                <p>La etiqueta <strong>video</strong> permite insertar y reproducir contenido audiovisual directamente en el navegador.</p>
+
+                                <p>Los videos son uno de los recursos mas utilizados para explicar procesos, mostrar tutoriales, presentaciones o contenido educativo.</p>
+
+                                <div class="image-slot">
+                                    <img src="../multimedia/videoimg.png" alt="Demo video">
+                                </div>
+
+                                <p class="code-preview">
+                                    &lt;video controls&gt;<br>
+                                    &lt;source src="video.mp4" type="video/mp4"&gt;<br>
+                                    &lt;/video&gt;
+                                </p>
+
+                                <br>
+
+                                <div>
+                                    <video class="video-demo" controls width="900">
+                                        <source src="../multimedia/sena.mp4" type="video/mp4">
+                                        <source src="../multimedia/sena.ogg" type="video/ogg">
+                                    </video>
+                                </div>
+
+                                <h3>Atributos importantes</h3>
+
+                                <ul>
+                                    <li><strong>controls</strong> → muestra controles de reproduccion.</li>
+                                    <li><strong>width / height</strong> → define el tamano del video.</li>
+                                    <li><strong>poster</strong> → imagen previa antes de reproducir el video.</li>
+                                    <li><strong>autoplay</strong> → inicia el video automaticamente.</li>
+                                    <li><strong>loop</strong> → repite el video.</li>
+                                </ul>
+
+                            </div>
+
+                            <h3>Uso Adecuado</h3>
+
+                            <p>Se utiliza para mostrar contenido audiovisual como tutoriales, presentaciones, demostraciones de productos o material educativo.</p>
+
+                            <div class="best-practices">
+
+                                <strong>Buenas practicas:</strong>
+
+                                <ul>
+                                    <li>Usar siempre el atributo <strong>controls</strong>.</li>
+                                    <li>Agregar una imagen <strong>poster</strong> para mejorar la presentacion.</li>
+                                    <li>Comprimir el video para mejorar la velocidad de carga.</li>
+                                    <li>Ofrecer mas de un formato para compatibilidad con diferentes navegadores.</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </body>
+</html>
