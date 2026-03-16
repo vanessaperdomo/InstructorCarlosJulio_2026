@@ -1,95 +1,300 @@
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #f4f7fb;
-    margin: 0;
-    padding: 40px;
-    color: #1a1a1a;
+/* Colores y variables globales del sitio */
+:root {
+    --blue: #2563eb;
+    --blue-dark: #1e40af;
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --gray: #f4f7fa;
+    --border: #e2e8f0;
 }
 
+/* Elimina margenes y padding por defecto en todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del cuerpo de la pagina */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: var(--white);
+    color: var(--black);
+}
+
+/* Barra de navegacion superior fija */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 2px solid var(--blue);
+    position: sticky;
+    top: 0;
+    background: var(--white);
+}
+
+/* Logo del blog */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* Color azul para la parte resaltada del logo */
+.logo span {
+    color: var(--blue);
+}
+
+/* Contenedor de los botones del menu horizontal */
+.tabs-horizontal {
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilos compartidos de botones y enlaces del nav */
+.tab-btn,
+.nav-link {
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--black);
+    text-decoration: none;
+    padding: 6px 0;
+}
+
+/* Layout principal: sidebar + contenido lado a lado */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Barra lateral izquierda con los botones de categorias */
+.sidebar {
+    width: 260px;
+    background: var(--gray);
+    padding: 25px;
+    border-right: 1px solid var(--border);
+}
+
+/* Etiqueta de titulo del sidebar */
+.sidebar-label {
+    font-size: .7rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* Botones de navegacion dentro del sidebar */
+.nav-vertical button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Efecto al pasar el mouse sobre los botones del sidebar */
+.nav-vertical button:hover {
+    background: var(--blue);
+    color: white;
+}
+
+/* Area principal donde se muestra el contenido */
+.main-content {
+    flex: 1;
+    padding: 40px 5%;
+}
+
+/* Oculta las secciones que no estan activas */
+.content-view {
+    display: none;
+}
+
+/* Muestra unicamente la seccion activa */
+.content-view.active {
+    display: block;
+}
+
+/* Contenedor centrado para el texto de teoria */
 .theory-container {
     max-width: 1000px;
     margin: auto;
 }
 
+/* Encabezado de cada seccion de teoria */
 .theory-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
+/* Titulo principal de cada seccion */
 .theory-header h1 {
-    color: #2563eb;
-    font-size: 2.3rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: var(--blue);
 }
 
-.tag-card {
-    background: white;
-    border-radius: 14px;
-    margin-bottom: 35px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: transform .2s;
+/* Tarjeta con texto e imagen lado a lado */
+.theory-card {
+    display: flex;
+    gap: 30px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
 }
 
-.tag-card:hover {
-    transform: translateY(-4px);
+/* Texto dentro de la tarjeta, justificado */
+.theory-text {
+    text-align: justify;
+    flex: 1;
 }
 
-.tag-header {
-    background: #2563eb;
-    color: white;
-    padding: 14px 20px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    letter-spacing: .5px;
+/* Contenedor de la imagen dentro de la tarjeta */
+.theory-image {
+    flex: 1;
 }
 
-.tag-body {
+/* Imagen de la tarjeta con tamano fijo */
+.theory-image img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+/* Grid para las tarjetas H, M, L o 1, 2, 3 */
+.meaning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Tarjeta individual del grid de significado */
+.meaning-card {
+    background: var(--gray);
     padding: 25px;
-}
-
-.tag-info h3 {
-    margin-top: 18px;
-    color: #1e40af;
-}
-
-.tag-info p {
-    line-height: 1.6;
+    border-radius: 12px;
     text-align: justify;
 }
 
-.image-slot {
-    margin: 20px 0;
+/* Subtitulos centrados globalmente */
+h3 {
     text-align: center;
 }
 
-.image-slot img {
-    max-width: 100%;
-    border-radius: 10px;
-    border: 1px solid #e2e8f0;
+/* Letra grande (H, M, L) de cada tarjeta */
+.m-letter {
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    color: #2f6fed;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.best-practices {
-    background: #eef4ff;
-    border-left: 4px solid #2563eb;
-    padding: 15px 20px;
-    border-radius: 8px;
-    margin-top: 15px;
-    text-align: justify;
+/* Grid de dos columnas para ventajas y desventajas */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 30px;
 }
 
-.best-practices ul {
+/* Tarjeta de ventajas */
+.pros-card {
+    background: rgb(117, 200, 248);
+    color: rgb(247, 248, 249);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+/* Tarjeta de desventajas */
+.cons-card {
+    background: rgb(117, 200, 248);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+/* Listas dentro de las tarjetas de comparacion */
+.pros-card ul,
+.cons-card ul {
     margin-top: 10px;
     padding-left: 20px;
 }
 
-.best-practices li {
-    margin-bottom: 6px;
+/* Caja oscura para mostrar la anatomia de una etiqueta */
+.anatomy-box {
+    background: #1e293b;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: center;
 }
 
-.video-demo {
-    border: 3px solid #2c3e50;
+/* Fuente monoespaciada para el ejemplo de codigo */
+.tag-example {
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+/* Color amarillo para las etiquetas de apertura y cierre */
+.t-open,
+.t-close {
+    color: #facc15;
+}
+
+/* Etiquetas de texto debajo del ejemplo de anatomia */
+.anatomy-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: .7rem;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* Caja de conclusion con borde azul a la izquierda */
+.conclusion-box {
+    background: var(--gray);
+    padding: 25px;
+    border-left: 5px solid var(--blue);
     border-radius: 10px;
-    width: 100%;
-    height: 440px;
+    margin-top: 40px;
+}
+
+/* Adaptacion para pantallas pequenas (celulares y tablets) */
+@media (max-width: 900px) {
+
+    /* Sidebar pasa a estar debajo del contenido */
+    .app-layout {
+        flex-direction: column;
+    }
+
+    /* Sidebar ocupa todo el ancho */
+    .sidebar {
+        width: 100%;
+    }
+
+    /* Tarjeta pasa a ser vertical */
+    .theory-card {
+        flex-direction: column;
+    }
+
+    /* Comparacion pasa a una sola columna */
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Se oculta el menu horizontal en movil */
+    .tabs-horizontal {
+        display: none;
+    }
+
 }

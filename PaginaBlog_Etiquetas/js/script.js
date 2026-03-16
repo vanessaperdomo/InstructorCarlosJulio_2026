@@ -1,19 +1,26 @@
-function cambiarSeccion(id){
+// Muestra la seccion seleccionada y oculta las demas
+function cambiarSeccion(id) {
 
-let secciones = document.querySelectorAll(".content-view");
+    // Selecciona todas las secciones de la pagina
+    let secciones = document.querySelectorAll(".content-view");
 
-secciones.forEach(sec=>{
-sec.classList.remove("active");
-});
+    // Quita la clase "active" de cada seccion para ocultarlas
+    secciones.forEach(sec => {
+        sec.classList.remove("active");
+    });
 
-document.getElementById(id).classList.add("active");
+    // Activa unicamente la seccion que se quiere mostrar
+    document.getElementById(id).classList.add("active");
 
 }
 
-function cargarPagina(pagina){
+// Carga una pagina de la biblioteca dentro del iframe
+function cargarPagina(pagina) {
 
-cambiarSeccion("sec-biblioteca");
+    // Muestra la seccion del visor de biblioteca
+    cambiarSeccion("sec-biblioteca");
 
-document.getElementById("visorBiblioteca").src = pagina;
+    // Cambia el src del iframe para mostrar la pagina indicada
+    document.getElementById("visorBiblioteca").src = pagina;
 
 }

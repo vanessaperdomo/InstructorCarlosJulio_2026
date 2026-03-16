@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/biblioteca.css">
         <title>Document</title>
+
     </head>
     <body>
 
@@ -34,6 +35,32 @@
 
                                 <div class="image-slot">
                                     <img src="../multimedia/form.png" alt="Demo estructura formulario">
+                                </div>
+
+                                <br>
+
+                                <div class="form-demo-wrapper">
+
+                                    <p class="form-demo-title">Demo interactivo — Crear cuenta</p>
+
+                                    <form id="formCuenta">
+
+                                        <div class="form-group">
+                                            <label for="nombre">Nombre</label>
+                                            <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="correo">Correo electronico</label>
+                                            <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+                                        </div>
+
+                                        <button type="submit">Crear cuenta</button>
+
+                                    </form>
+
+                                    <p id="mensaje"></p>
+
                                 </div>
 
                                 <h3>Uso Adecuado</h3>
@@ -161,6 +188,8 @@
             </article>
 
         </section>
+
+        <script src="../js/form.js"></script>
 
     </body>
 </html>
