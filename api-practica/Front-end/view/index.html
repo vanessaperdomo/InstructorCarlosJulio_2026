@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+<!-- SIDEBAR - usa javascript:void(0) para evitar scroll al inicio -->
+<div class="sidebar">
+    <div class="titulo">Sistema Api Practica</div>
+    <a href="javascript:void(0)" class="active" onclick="mostrar('productos', this)">Productos</a>
+    <a href="javascript:void(0)" onclick="mostrar('usuarios', this)">Usuarios</a>
+    <a href="javascript:void(0)" onclick="mostrar('carritos', this)">Carritos</a>
+    <a href="javascript:void(0)" onclick="mostrar('posts', this)">Posts</a>
+</div>
+
+<!-- MODALES PRODUCTOS -->
+<div class="modal fade" id="modalCrear" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Crear Producto</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3"><label class="form-label">Título</label>
+                <input id="createTitle" type="text" class="form-control" placeholder="Título del producto"></div>
+            <div class="mb-3"><label class="form-label">Precio</label>
+                <input id="createPrice" type="number" class="form-control" placeholder="Precio"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-primary" onclick="confirmCreate()">Crear</button>
+        </div>
+    </div></div>
+</div>
+
+<div class="modal fade" id="modalActualizar" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header bg-warning">
+            <h5 class="modal-title">Actualizar Producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <input id="modalId" type="hidden">
+            <div class="mb-3"><label class="form-label">Título</label>
+                <input id="modalTitle" type="text" class="form-control"></div>
+            <div class="mb-3"><label class="form-label">Precio</label>
+                <input id="modalPrice" type="number" class="form-control"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-warning" onclick="confirmUpdate()">Guardar</button>
+        </div>
+    </div></div>
+</div>
+
+<!-- MODALES USUARIOS -->
+<div class="modal fade" id="modalCrearUser" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Crear Usuario</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3"><label class="form-label">Nombre</label>
+                <input id="createFirstName" type="text" class="form-control" placeholder="Nombre"></div>
+            <div class="mb-3"><label class="form-label">Apellido</label>
+                <input id="createLastName" type="text" class="form-control" placeholder="Apellido"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-primary" onclick="confirmCreateUser()">Crear</button>
+        </div>
+    </div></div>
+</div>
+
+<div class="modal fade" id="modalActualizarUser" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header bg-warning">
+            <h5 class="modal-title">Actualizar Usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <input id="modalIdUser" type="hidden">
+            <div class="mb-3"><label class="form-label">Nombre</label>
+                <input id="modalFirstName" type="text" class="form-control"></div>
+            <div class="mb-3"><label class="form-label">Apellido</label>
+                <input id="modalLastName" type="text" class="form-control"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-warning" onclick="confirmUpdateUser()">Guardar</button>
+        </div>
+    </div></div>
+</div>
+
+<!-- MODALES CARRITOS -->
+<div class="modal fade" id="modalCrearCart" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Crear Carrito</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3"><label class="form-label">Título del producto</label>
+                <input id="createCartTitle" type="text" class="form-control" placeholder="Título"></div>
+            <div class="mb-3"><label class="form-label">Total</label>
+                <input id="createCartTotal" type="number" class="form-control" placeholder="Total"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-primary" onclick="confirmCreateCart()">Crear</button>
+        </div>
+    </div></div>
+</div>
+
+<div class="modal fade" id="modalActualizarCart" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header bg-warning">
+            <h5 class="modal-title">Actualizar Carrito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <input id="modalIdCart" type="hidden">
+            <div class="mb-3"><label class="form-label">Título del producto</label>
+                <input id="modalCartTitle" type="text" class="form-control"></div>
+            <div class="mb-3"><label class="form-label">Total</label>
+                <input id="modalCartTotal" type="number" class="form-control"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-warning" onclick="confirmUpdateCart()">Guardar</button>
+        </div>
+    </div></div>
+</div>
+
+<!-- MODALES POSTS -->
+<div class="modal fade" id="modalCrearPost" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Crear Post</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3"><label class="form-label">Título</label>
+                <input id="createPostTitle" type="text" class="form-control" placeholder="Título"></div>
+            <div class="mb-3"><label class="form-label">Contenido</label>
+                <textarea id="createPostBody" class="form-control" rows="3" placeholder="Contenido"></textarea></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-primary" onclick="confirmCreatePost()">Crear</button>
+        </div>
+    </div></div>
+</div>
+
+<div class="modal fade" id="modalActualizarPost" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header bg-warning">
+            <h5 class="modal-title">Actualizar Post</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <input id="modalIdPost" type="hidden">
+            <div class="mb-3"><label class="form-label">Título</label>
+                <input id="modalPostTitle" type="text" class="form-control"></div>
+            <div class="mb-3"><label class="form-label">Contenido</label>
+                <textarea id="modalPostBody" class="form-control" rows="3"></textarea></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-warning" onclick="confirmUpdatePost()">Guardar</button>
+        </div>
+    </div></div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="contenido">
+
+    <!-- SECCIÓN PRODUCTOS -->
+    <div class="seccion activa" id="productos">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-white"><h4 class="mb-0">Lista de Productos</h4></div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-7"><input id="idFilter" type="text" class="form-control" placeholder="ID"></div>
+                    <div class="col-md-3 d-grid"><button class="btn btn-info text-white" onclick="getFindByIdProduct()">Consultar ID</button></div>
+                    <div class="col-md-2 d-grid"><button class="btn btn-primary" onclick="openCreateModal()">Crear</button></div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-primary text-center">
+                            <tr><th>ID</th><th>Título</th><th>Precio</th><th>Actualizar</th><th>Eliminar</th></tr>
+                        </thead>
+                        <tbody id="container" class="text-center"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN USUARIOS -->
+    <div class="seccion" id="usuarios">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-white"><h4 class="mb-0">Lista de Usuarios</h4></div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-7"><input id="idFilterUser" type="text" class="form-control" placeholder="ID"></div>
+                    <div class="col-md-3 d-grid"><button class="btn btn-info text-white" onclick="getFindByIdUser()">Consultar ID</button></div>
+                    <div class="col-md-2 d-grid"><button class="btn btn-primary" onclick="openCreateModalUser()">Crear</button></div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-primary text-center">
+                            <tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Actualizar</th><th>Eliminar</th></tr>
+                        </thead>
+                        <tbody id="containerUsers" class="text-center"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN CARRITOS -->
+    <div class="seccion" id="carritos">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-white"><h4 class="mb-0">Lista de Carritos</h4></div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-7"><input id="idFilterCart" type="text" class="form-control" placeholder="ID"></div>
+                    <div class="col-md-3 d-grid"><button class="btn btn-info text-white" onclick="getFindByIdCart()">Consultar ID</button></div>
+                    <div class="col-md-2 d-grid"><button class="btn btn-primary" onclick="openCreateModalCart()">Crear</button></div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-primary text-center">
+                            <tr><th>ID</th><th>Título</th><th>Total</th><th>Actualizar</th><th>Eliminar</th></tr>
+                        </thead>
+                        <tbody id="containerCarts" class="text-center"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN POSTS -->
+    <div class="seccion" id="posts">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-white"><h4 class="mb-0">Lista de Posts</h4></div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-7"><input id="idFilterPost" type="text" class="form-control" placeholder="ID"></div>
+                    <div class="col-md-3 d-grid"><button class="btn btn-info text-white" onclick="getFindByIdPost()">Consultar ID</button></div>
+                    <div class="col-md-2 d-grid"><button class="btn btn-primary" onclick="openCreateModalPost()">Crear</button></div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-primary text-center">
+                            <tr><th>ID</th><th>Título</th><th>Contenido</th><th>Actualizar</th><th>Eliminar</th></tr>
+                        </thead>
+                        <tbody id="containerPosts" class="text-center"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL ELIMINAR compartido -->
+<div class="modal fade" id="modalEliminar" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">¿Eliminar?</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Esta acción no se puede deshacer.</p>
+                <input id="deleteId" type="hidden">
+                <input id="deleteCallback" type="hidden">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button class="btn btn-danger" onclick="confirmarEliminar()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/const.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/users.js"></script>
+<script src="../js/carts.js"></script>
+<script src="../js/posts.js"></script>
+
+<script>
+// confirma la eliminacion desde el modal compartido
+async function confirmarEliminar(){
+  var id   = document.getElementById("deleteId").value;
+  var tipo = document.getElementById("deleteCallback").value;
+  bootstrap.Modal.getInstance(document.getElementById("modalEliminar")).hide();
+  if(tipo == "producto"){ await queue(urlProducts+"/"+id, deletes); getAllProducts(); }
+  if(tipo == "usuario"){  await queue(urlUsers+"/"+id, deletes);    getAllUsers();    }
+  if(tipo == "carrito"){  await queue(urlCarts+"/"+id, deletes);    getAllCarts();    }
+  if(tipo == "post"){     await queue(urlPosts+"/"+id, deletes);    getAllPosts();    }
+}
+
+window.onload = function(){
+  // recupera la seccion donde estaba antes del reload de Live Server
+  var seccion = sessionStorage.getItem('seccionActual') || 'productos';
+  activarSeccion(seccion);
+  if(seccion == 'productos') getAllProducts();
+  if(seccion == 'usuarios') getAllUsers();
+  if(seccion == 'carritos') getAllCarts();
+  if(seccion == 'posts') getAllPosts();
+}
+</script>
+
+</body>
+</html>

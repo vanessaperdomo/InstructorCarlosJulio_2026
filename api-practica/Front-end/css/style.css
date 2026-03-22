@@ -1,0 +1,54 @@
+html, body {
+    height: 100%;
+}
+
+.sidebar {
+    width: 220px;
+    min-height: 100vh;
+    background-color: #1e70eb;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar .titulo {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 20px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.sidebar a {
+    display: block;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.sidebar a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+    font-weight: bold;
+    border-left: 4px solid white;
+}
+
+.contenido {
+    margin-left: 220px;
+    padding: 30px;
+}
+
+.seccion {
+    display: none;
+}
+
+.seccion.activa {
+    display: block;
+}
